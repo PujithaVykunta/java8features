@@ -23,9 +23,10 @@ public class StreamApi {
 	System.out.println("using stream filter() method ");
 	
 	list1.stream()
-	.filter(i->(i%2==0))
+	.filter(i->(i%2==1))
 	.forEach(System.out::println);
 	System.out.println("copying from stream to list");
+	
 	List<Integer> evennumbers=list1.stream()
 			.filter(i->(i%2==0))
 			.toList();
@@ -33,7 +34,7 @@ public class StreamApi {
 	
 	//predicate is inbuilt functional interface have  boolean test() method giving implementation in a filter() method
 	Predicate<Integer> check=i->(i%2==0);
-	System.out.println(check.test(7));
+	System.out.println(check.test(4));
 
 	//Consumer is a functional interface  have void accept(it takes type as argument) method
 	Consumer<String> consume=message->System.out.println("hi "+message);
